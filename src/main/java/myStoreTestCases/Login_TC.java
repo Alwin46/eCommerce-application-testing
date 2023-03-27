@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.LoginObjects;
+import myStoreTestObjects.LoginObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

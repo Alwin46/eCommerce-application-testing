@@ -1,9 +1,10 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.FilterObjects;
+import myStoreTestObjects.FilterObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -12,8 +13,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class FilterSize_TC extends CommonFunctions {
-
+public class FilterPrice_TC extends CommonFunctions {
     String filtered;
 
     public void filter()
@@ -21,30 +21,34 @@ public class FilterSize_TC extends CommonFunctions {
         test.info("Clicking the clothes category");
         FilterObjects.clothesCategory.click();
 
-        test.info("Selecting the small size in filter");
-        FilterObjects.smallSize.click();
+        test.info("Setting the price filter to 100$ to 350$");
+        Actions actions=new Actions(driver);
+        actions.dragAndDropBy(FilterObjects.price,77,0).build().perform();
 
-        test.info("Getting the filtered size");
-        filtered=FilterObjects.sizeFiltered.getText();
+        test.info("Clicking the ok button");
+        FilterObjects.okButton.click();
+
+        test.info("Getting the filtered price");
+        filtered= FilterObjects.priceFiltered.getText();
 
     }
 
-    public void validateSize()
+    public void validatePrice()
     {
-        test.info("Expected result is : Small");
+        test.info("Expected result is : $100.00 - $350.00");
         test.info("Actual result is : "+filtered);
 
-        if (filtered.equals("Small"))
+        if (filtered.equals("$100.00 - $350.00"))
         {
-            test.pass("The size has been filtered to small");
+            test.pass("The price has been filtered to $100.00 - $350.00 level");
         }
         else
         {
-            test.fail("The size hasn't been filtered to small");
+            test.fail("The price hasn't been filtered to $100.00 - $350.00 level");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("sizeFilter.png");
+            File file=new File("priceFilter.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -53,23 +57,22 @@ public class FilterSize_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("sizeFilter.png");
+                test.addScreenCaptureFromPath("priceFilter.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-
         }
-        Assert.assertEquals(filtered,"Small");
+
+        Assert.assertEquals(filtered,"$100.00 - $350.00");
     }
 
     @Test
-    public void filterSize()
+    public void filterPrice()
     {
-        test=reports.createTest("Filter size test case");
+        test=reports.createTest("Filter price test case");
         PageFactory.initElements(driver, FilterObjects.class);
         filter();
-        validateSize();
+        validatePrice();
         FilterObjects.homePage.click();
-
     }
 }

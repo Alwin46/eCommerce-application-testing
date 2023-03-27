@@ -1,21 +1,20 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.ProductDetailsObjects;
+import myStoreTestObjects.ProductDetailsObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 
-public class ProductName_TC extends CommonFunctions {
+public class ProductDescription_TC extends CommonFunctions {
 
-    String name;
+    String Description;
 
     public void searchProduct()
     {
@@ -25,26 +24,26 @@ public class ProductName_TC extends CommonFunctions {
         test.info("Entering a product name");
         driver.switchTo().activeElement().sendKeys("Blackstock Altitude Jacket - Hunting Jacket"+Keys.ENTER);
 
-        test.info("Getting the product name");
-        name=ProductDetailsObjects.productName.getText();
-
+        test.info("Getting the product description");
+        Description=ProductDetailsObjects.productDescription.getText();
     }
 
-    public void validateName()
+    public void validateProductDetails()
     {
-        test.info("Expected result is : Blackstock Altitude Jacket - Hunting Jacket");
-        test.info("Actual result is : "+name);
+        test.info("Expected result is : The product description should be in the product page");
 
-        if (name.equals("Blackstock Altitude Jacket - Hunting Jacket"))
+        if (Description.contains("This Hybrid 3 Layer Laminate Waterproof Breathable Softshell jacket is Waterproof"))
         {
-            test.pass("The product name is displaying");
+            test.info("Actual result is : The product description are in the product page");
+            test.pass("The product description is displaying");
         }
-        else {
-            test.fail("The product name is not displaying");
+        else
+        {
+            test.fail("The product description is not displaying");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("productName.png");
+            File file=new File("productDescription.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -53,21 +52,21 @@ public class ProductName_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("ProductName.png");
+                test.addScreenCaptureFromPath("productDescription.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
+
         }
-        Assert.assertEquals(name,"Blackstock Altitude Jacket - Hunting Jacket");
     }
 
     @Test
-    public void productPrice()
+    public void productDetails()
     {
-        test=reports.createTest("Product name test case");
-        PageFactory.initElements(driver,ProductDetailsObjects.class);
+        test=reports.createTest("Product description test case");
+        PageFactory.initElements(driver, ProductDetailsObjects.class);
         searchProduct();
-        validateName();
+        validateProductDetails();
         ProductDetailsObjects.homePage.click();
     }
 }

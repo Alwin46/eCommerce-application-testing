@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.CategoryObjects;
+import myStoreTestObjects.CategoryObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,35 +12,35 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class MystoreAllProductsCategory_TC extends CommonFunctions {
+public class BeautyProductsCategory_TC extends CommonFunctions {
 
     String categorized;
+
     public void categorize()
     {
-        test.info("Clicking the Mystore all category");
-        CategoryObjects.allProductsCategory.click();
+        test.info("Clicking the beauty products category");
+        CategoryObjects.beautyProductsCategory.click();
 
         test.info("Getting the categorized result");
         categorized= CategoryObjects.categorizedProducts.getText();
-
     }
 
     public void validateCategorizedProducts()
     {
-        test.info("Expected result is : MyStore");
+        test.info("Expected result is : Beauty");
         test.info("Actual result is : "+categorized);
 
-        if (categorized.equals("MyStore"))
+        if (categorized.equals("Beauty"))
         {
-            test.pass("The Mystore all products has been categorized");
+            test.pass("The beauty products has been categorized");
         }
         else
         {
-            test.fail("The Mystore all products hasn't been categorized");
+            test.fail("The beauty products hasn't been categorized");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("MyStore.png");
+            File file=new File("beauty.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -49,19 +49,18 @@ public class MystoreAllProductsCategory_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("MyStore.png");
+                test.addScreenCaptureFromPath("beauty.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         }
-
-        Assert.assertEquals(categorized,"MyStore");
+        Assert.assertEquals(categorized,"Beauty");
     }
 
     @Test
     public void beautyProducts()
     {
-        test=reports.createTest("Search all products category Test Case");
+        test=reports.createTest("Search beauty products category Test Case");
         PageFactory.initElements(driver, CategoryObjects.class);
         categorize();
         validateCategorizedProducts();

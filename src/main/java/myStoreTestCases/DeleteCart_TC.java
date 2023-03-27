@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.DeleteCartObjects;
+import myStoreTestObjects.DeleteCartObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;

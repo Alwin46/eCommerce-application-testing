@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.QuantityACartObjects;
+import myStoreTestObjects.QuantityACartObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

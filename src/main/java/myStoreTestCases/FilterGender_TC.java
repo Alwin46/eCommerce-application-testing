@@ -1,10 +1,10 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.FilterObjects;
+import myStoreTestObjects.FilterObjects;
 import commonActions.CommonFunctions;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -13,7 +13,8 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class FilterPrice_TC extends CommonFunctions {
+public class FilterGender_TC extends CommonFunctions {
+
     String filtered;
 
     public void filter()
@@ -21,34 +22,34 @@ public class FilterPrice_TC extends CommonFunctions {
         test.info("Clicking the clothes category");
         FilterObjects.clothesCategory.click();
 
-        test.info("Setting the price filter to 100$ to 350$");
-        Actions actions=new Actions(driver);
-        actions.dragAndDropBy(FilterObjects.price,77,0).build().perform();
+        test.info("Selecting the gender women");
+        FilterObjects.genderWomen.click();
 
-        test.info("Clicking the ok button");
-        FilterObjects.okButton.click();
-
-        test.info("Getting the filtered price");
-        filtered= FilterObjects.priceFiltered.getText();
-
+        try {
+            test.info("Getting the filtered gender");
+            filtered= FilterObjects.genderFiltered.getText();
+        }catch (NoSuchElementException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void validatePrice()
+    public void validateGender()
     {
-        test.info("Expected result is : $100.00 - $350.00");
+        test.info("Expected result is : Women");
         test.info("Actual result is : "+filtered);
 
-        if (filtered.equals("$100.00 - $350.00"))
+        if(filtered.equals("Women"))
         {
-            test.pass("The price has been filtered to $100.00 - $350.00 level");
+            test.pass("The gender has been filtered to women");
         }
         else
         {
-            test.fail("The price hasn't been filtered to $100.00 - $350.00 level");
+            test.fail("The gender hasn't been filtered to women");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("priceFilter.png");
+            File file=new File("genderFilter.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -57,22 +58,21 @@ public class FilterPrice_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("priceFilter.png");
+                test.addScreenCaptureFromPath("genderFilter.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         }
-
-        Assert.assertEquals(filtered,"$100.00 - $350.00");
+        Assert.assertEquals(filtered,"Women");
     }
 
     @Test
-    public void filterPrice()
+    public void filterGender()
     {
-        test=reports.createTest("Filter price test case");
+        test=reports.createTest("Filter gender test case");
         PageFactory.initElements(driver, FilterObjects.class);
         filter();
-        validatePrice();
+        validateGender();
         FilterObjects.homePage.click();
     }
 }

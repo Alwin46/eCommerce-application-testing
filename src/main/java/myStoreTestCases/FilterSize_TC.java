@@ -1,8 +1,7 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.FilterObjects;
+import myStoreTestObjects.FilterObjects;
 import commonActions.CommonFunctions;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
@@ -13,7 +12,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class FilterGender_TC extends CommonFunctions {
+public class FilterSize_TC extends CommonFunctions {
 
     String filtered;
 
@@ -22,34 +21,30 @@ public class FilterGender_TC extends CommonFunctions {
         test.info("Clicking the clothes category");
         FilterObjects.clothesCategory.click();
 
-        test.info("Selecting the gender women");
-        FilterObjects.genderWomen.click();
+        test.info("Selecting the small size in filter");
+        FilterObjects.smallSize.click();
 
-        try {
-            test.info("Getting the filtered gender");
-            filtered= FilterObjects.genderFiltered.getText();
-        }catch (NoSuchElementException e)
-        {
-            System.out.println(e.getMessage());
-        }
+        test.info("Getting the filtered size");
+        filtered=FilterObjects.sizeFiltered.getText();
+
     }
 
-    public void validateGender()
+    public void validateSize()
     {
-        test.info("Expected result is : Women");
+        test.info("Expected result is : Small");
         test.info("Actual result is : "+filtered);
 
-        if(filtered.equals("Women"))
+        if (filtered.equals("Small"))
         {
-            test.pass("The gender has been filtered to women");
+            test.pass("The size has been filtered to small");
         }
         else
         {
-            test.fail("The gender hasn't been filtered to women");
+            test.fail("The size hasn't been filtered to small");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("genderFilter.png");
+            File file=new File("sizeFilter.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -58,21 +53,23 @@ public class FilterGender_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("genderFilter.png");
+                test.addScreenCaptureFromPath("sizeFilter.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
+
         }
-        Assert.assertEquals(filtered,"Women");
+        Assert.assertEquals(filtered,"Small");
     }
 
     @Test
-    public void filterGender()
+    public void filterSize()
     {
-        test=reports.createTest("Filter gender test case");
+        test=reports.createTest("Filter size test case");
         PageFactory.initElements(driver, FilterObjects.class);
         filter();
-        validateGender();
+        validateSize();
         FilterObjects.homePage.click();
+
     }
 }

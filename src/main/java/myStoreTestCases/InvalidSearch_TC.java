@@ -1,8 +1,9 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.SearchBarobjects;
+import myStoreTestObjects.SearchBarobjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
@@ -13,7 +14,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class ValidSearch_TC extends CommonFunctions {
+public class InvalidSearch_TC extends CommonFunctions {
 
     String result;
 
@@ -22,29 +23,25 @@ public class ValidSearch_TC extends CommonFunctions {
        test.info("Clicking the search bar");
        SearchBarobjects.searchBar.click();
 
-       test.info("Entering a valid data");
-       driver.switchTo().activeElement().sendKeys("Plant Knight Protectors - 3 PACK"+ Keys.ENTER);
+       test.info("Entering a Invalid data");
+       driver.switchTo().activeElement().sendKeys("12345"+ Keys.ENTER);
 
-       test.info("Getting the search result");
-       result=SearchBarobjects.searchResult.getText();
    }
 
    public void validate()
    {
-       test.info("Expected result is : Plant Knight Protectors - 3 PACK");
-       test.info("Actual result is : "+result);
+       try {
+           test.info("Getting the search result");
+           test.info("Expected result is : null");
 
-       if (result.equals("Plant Knight Protectors - 3 PACK"))
-       {
-           test.pass("This is valid data");
-       }
-       else
-       {
-           test.fail("This is invalid data");
+           result=SearchBarobjects.searchResult.getText();
+           test.info("Actual result is : "+result);
+
+           test.fail("The is valid data");
 
            TakesScreenshot takesScreenshot=(TakesScreenshot) driver;
            File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-           File file=new File("validData.png");
+           File file=new File("inValidData.png");
            try {
                FileHandler.copy(screenShot,file);
            } catch (IOException e)
@@ -53,13 +50,18 @@ public class ValidSearch_TC extends CommonFunctions {
            }
 
            try {
-               test.addScreenCaptureFromPath("validData.png");
+               test.addScreenCaptureFromPath("inValidData.png");
            } catch (IOException e) {
                System.out.println(e.getMessage());
            }
-       }
 
-       Assert.assertEquals(result,"Plant Knight Protectors - 3 PACK");
+       }
+       catch (NoSuchElementException e){
+
+           test.info("Actual result is :"+result);
+           test.pass("This is invalid data");
+       }
+       Assert.assertNull(result);
    }
 
 

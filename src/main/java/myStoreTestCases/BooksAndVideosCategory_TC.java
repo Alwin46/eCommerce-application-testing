@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.CategoryObjects;
+import myStoreTestObjects.CategoryObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,14 +12,14 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class BeautyProductsCategory_TC extends CommonFunctions {
+public class BooksAndVideosCategory_TC extends CommonFunctions {
 
     String categorized;
 
     public void categorize()
     {
-        test.info("Clicking the beauty products category");
-        CategoryObjects.beautyProductsCategory.click();
+        test.info("Clicking the books and videos category");
+        CategoryObjects.booksAndVideosCategory.click();
 
         test.info("Getting the categorized result");
         categorized= CategoryObjects.categorizedProducts.getText();
@@ -27,20 +27,20 @@ public class BeautyProductsCategory_TC extends CommonFunctions {
 
     public void validateCategorizedProducts()
     {
-        test.info("Expected result is : Beauty");
+        test.info("Expected result is : Books and Videos");
         test.info("Actual result is : "+categorized);
 
-        if (categorized.equals("Beauty"))
+        if (categorized.equals("Books and Videos"))
         {
-            test.pass("The beauty products has been categorized");
+            test.pass("The books and videos has been categorized");
         }
         else
         {
-            test.fail("The beauty products hasn't been categorized");
+            test.fail("The books and videos hasn't been categorized");
 
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("beauty.png");
+            File file=new File("books&Videos.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -49,19 +49,20 @@ public class BeautyProductsCategory_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("beauty.png");
+                test.addScreenCaptureFromPath("books&Videos.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
+
         }
-        Assert.assertEquals(categorized,"Beauty");
+        Assert.assertEquals(categorized,"Books and Videos");
     }
 
     @Test
-    public void beautyProducts()
+    public void booksAndVideos()
     {
-        test=reports.createTest("Search beauty products category Test Case");
-        PageFactory.initElements(driver, CategoryObjects.class);
+        test=reports.createTest("Search books and videos category Test Case");
+        PageFactory.initElements(driver,CategoryObjects.class);
         categorize();
         validateCategorizedProducts();
         CategoryObjects.homePage.click();

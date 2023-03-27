@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.CartObjects;
+import myStoreTestObjects.CartObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;

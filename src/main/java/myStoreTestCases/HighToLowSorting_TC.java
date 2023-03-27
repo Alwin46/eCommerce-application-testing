@@ -1,6 +1,6 @@
-package MystoreTestCases;
+package myStoreTestCases;
 
-import MystoreTestObjects.SortByObjects;
+import myStoreTestObjects.SortByObjects;
 import commonActions.CommonFunctions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class LowToHighSorting_TC extends CommonFunctions {
+public class HighToLowSorting_TC extends CommonFunctions {
 
     float price;
 
@@ -22,31 +22,31 @@ public class LowToHighSorting_TC extends CommonFunctions {
         test.info("Clicking the sports category");
         SortByObjects.sportsCategory.click();
 
-        test.info("Selecting the low to high sort");
+        test.info("Selecting the high to low sort");
         Select select=new Select(SortByObjects.sort);
-        select.selectByIndex(4);
+        select.selectByIndex(5);
 
         test.info("Getting the sorted products price");
-        String lowPrice=SortByObjects.lowToHigh.getText().replace("$","");
+        String lowPrice=SortByObjects.highToLow.getText().replace("$","");
         price=Float.parseFloat(lowPrice);
     }
 
     public void validate()
     {
-        test.info("Expected result is : less than 10 dollars");
+        test.info("Expected result is : greater than 500 dollars");
         test.info("Actual result is : "+price);
 
-        if (price<10)
+        if (price>500)
         {
-            test.pass("The price has been sorted as low to high");
+            test.pass("The price has been sorted as high to low");
         }
         else
         {
-            test.fail("The price hasn't been sorted as low to high");
+            test.fail("The price hasn't been sorted as high to low");
 
             TakesScreenshot takesScreenshot=(TakesScreenshot) driver;
             File screenShot=takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("lowToHigh.png");
+            File file=new File("highToLow.png");
             try {
                 FileHandler.copy(screenShot,file);
             } catch (IOException e)
@@ -55,7 +55,7 @@ public class LowToHighSorting_TC extends CommonFunctions {
             }
 
             try {
-                test.addScreenCaptureFromPath("lowToHigh.png");
+                test.addScreenCaptureFromPath("highToLow.png");
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
@@ -65,7 +65,7 @@ public class LowToHighSorting_TC extends CommonFunctions {
     @Test
     public void priceLowToHigh()
     {
-        test=reports.createTest("Price low to high sort test case");
+        test=reports.createTest("Price high to low sort test case");
         PageFactory.initElements(driver, SortByObjects.class);
         sort();
         validate();
