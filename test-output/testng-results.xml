@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="19" passed="19" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-03-27T14:06:45 IST" name="Mystore Regression Test Suite" finished-at="2023-03-27T14:11:21 IST" duration-ms="276818">
+    <groups>
+    </groups>
+    <test started-at="2023-03-27T14:06:45 IST" name="Login test" finished-at="2023-03-27T14:06:57 IST" duration-ms="12507">
+      <class name="MystoreTestCases.Login_TC">
+        <test-method signature="login()[pri:0, instance:MystoreTestCases.Login_TC@60dcc9fe]" started-at="2023-03-27T14:06:45 IST" name="login" finished-at="2023-03-27T14:06:57 IST" duration-ms="12395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- MystoreTestCases.Login_TC -->
+    </test> <!-- Login test -->
+    <test started-at="2023-03-27T14:06:57 IST" name="Categorize the books and videos test" finished-at="2023-03-27T14:07:08 IST" duration-ms="11118">
+      <class name="MystoreTestCases.BooksAndVideosCategory_TC">
+        <test-method signature="booksAndVideos()[pri:0, instance:MystoreTestCases.BooksAndVideosCategory_TC@12e61fe6]" started-at="2023-03-27T14:06:57 IST" name="booksAndVideos" finished-at="2023-03-27T14:07:08 IST" duration-ms="11118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- booksAndVideos -->
+      </class> <!-- MystoreTestCases.BooksAndVideosCategory_TC -->
+    </test> <!-- Categorize the books and videos test -->
+    <test started-at="2023-03-27T14:07:08 IST" name="Categorize the beauty products test" finished-at="2023-03-27T14:07:24 IST" duration-ms="15474">
+      <class name="MystoreTestCases.BeautyProductsCategory_TC">
+        <test-method signature="beautyProducts()[pri:0, instance:MystoreTestCases.BeautyProductsCategory_TC@5e316c74]" started-at="2023-03-27T14:07:08 IST" name="beautyProducts" finished-at="2023-03-27T14:07:24 IST" duration-ms="15474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beautyProducts -->
+      </class> <!-- MystoreTestCases.BeautyProductsCategory_TC -->
+    </test> <!-- Categorize the beauty products test -->
+    <test started-at="2023-03-27T14:07:24 IST" name="Categorize the Mystore all products test" finished-at="2023-03-27T14:07:38 IST" duration-ms="14665">
+      <class name="MystoreTestCases.MystoreAllProductsCategory_TC">
+        <test-method signature="beautyProducts()[pri:0, instance:MystoreTestCases.MystoreAllProductsCategory_TC@7f010382]" started-at="2023-03-27T14:07:24 IST" name="beautyProducts" finished-at="2023-03-27T14:07:38 IST" duration-ms="14665" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beautyProducts -->
+      </class> <!-- MystoreTestCases.MystoreAllProductsCategory_TC -->
+    </test> <!-- Categorize the Mystore all products test -->
+    <test started-at="2023-03-27T14:07:38 IST" name="Size filter test" finished-at="2023-03-27T14:08:02 IST" duration-ms="23570">
+      <class name="MystoreTestCases.FilterSize_TC">
+        <test-method signature="filterSize()[pri:0, instance:MystoreTestCases.FilterSize_TC@6e0dec4a]" started-at="2023-03-27T14:07:38 IST" name="filterSize" finished-at="2023-03-27T14:08:02 IST" duration-ms="23565" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterSize -->
+      </class> <!-- MystoreTestCases.FilterSize_TC -->
+    </test> <!-- Size filter test -->
+    <test started-at="2023-03-27T14:08:02 IST" name="Gender filter test" finished-at="2023-03-27T14:08:15 IST" duration-ms="12434">
+      <class name="MystoreTestCases.FilterGender_TC">
+        <test-method signature="filterGender()[pri:0, instance:MystoreTestCases.FilterGender_TC@7c0c77c7]" started-at="2023-03-27T14:08:02 IST" name="filterGender" finished-at="2023-03-27T14:08:15 IST" duration-ms="12433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterGender -->
+      </class> <!-- MystoreTestCases.FilterGender_TC -->
+    </test> <!-- Gender filter test -->
+    <test started-at="2023-03-27T14:08:15 IST" name="Price filter test" finished-at="2023-03-27T14:08:34 IST" duration-ms="19148">
+      <class name="MystoreTestCases.FilterPrice_TC">
+        <test-method signature="filterPrice()[pri:0, instance:MystoreTestCases.FilterPrice_TC@4ddced80]" started-at="2023-03-27T14:08:15 IST" name="filterPrice" finished-at="2023-03-27T14:08:34 IST" duration-ms="19142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterPrice -->
+      </class> <!-- MystoreTestCases.FilterPrice_TC -->
+    </test> <!-- Price filter test -->
+    <test started-at="2023-03-27T14:08:34 IST" name="Product details test" finished-at="2023-03-27T14:08:50 IST" duration-ms="16415">
+      <class name="MystoreTestCases.ProductDescription_TC">
+        <test-method signature="productDetails()[pri:0, instance:MystoreTestCases.ProductDescription_TC@3eb7fc54]" started-at="2023-03-27T14:08:34 IST" name="productDetails" finished-at="2023-03-27T14:08:50 IST" duration-ms="16414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productDetails -->
+      </class> <!-- MystoreTestCases.ProductDescription_TC -->
+    </test> <!-- Product details test -->
+    <test started-at="2023-03-27T14:08:50 IST" name="Product price test" finished-at="2023-03-27T14:09:04 IST" duration-ms="13499">
+      <class name="MystoreTestCases.ProductPrice_TC">
+        <test-method signature="productPrice()[pri:0, instance:MystoreTestCases.ProductPrice_TC@3aefe5e5]" started-at="2023-03-27T14:08:50 IST" name="productPrice" finished-at="2023-03-27T14:09:04 IST" duration-ms="13499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productPrice -->
+      </class> <!-- MystoreTestCases.ProductPrice_TC -->
+    </test> <!-- Product price test -->
+    <test started-at="2023-03-27T14:09:04 IST" name="Product name test" finished-at="2023-03-27T14:09:16 IST" duration-ms="12454">
+      <class name="MystoreTestCases.ProductName_TC">
+        <test-method signature="productPrice()[pri:0, instance:MystoreTestCases.ProductName_TC@36c88a32]" started-at="2023-03-27T14:09:04 IST" name="productPrice" finished-at="2023-03-27T14:09:16 IST" duration-ms="12444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productPrice -->
+      </class> <!-- MystoreTestCases.ProductName_TC -->
+    </test> <!-- Product name test -->
+    <test started-at="2023-03-27T14:09:16 IST" name="Add to cart test case" finished-at="2023-03-27T14:09:36 IST" duration-ms="20234">
+      <class name="MystoreTestCases.AddCart_TC">
+        <test-method signature="addToCart()[pri:0, instance:MystoreTestCases.AddCart_TC@5223e5ee]" started-at="2023-03-27T14:09:16 IST" name="addToCart" finished-at="2023-03-27T14:09:36 IST" duration-ms="20231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCart -->
+      </class> <!-- MystoreTestCases.AddCart_TC -->
+    </test> <!-- Add to cart test case -->
+    <test started-at="2023-03-27T14:09:36 IST" name="Add quantity test case" finished-at="2023-03-27T14:09:44 IST" duration-ms="8041">
+      <class name="MystoreTestCases.AddQuantity_TC">
+        <test-method signature="addQuantity()[pri:0, instance:MystoreTestCases.AddQuantity_TC@2473d930]" started-at="2023-03-27T14:09:36 IST" name="addQuantity" finished-at="2023-03-27T14:09:44 IST" duration-ms="8041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addQuantity -->
+      </class> <!-- MystoreTestCases.AddQuantity_TC -->
+    </test> <!-- Add quantity test case -->
+    <test started-at="2023-03-27T14:09:44 IST" name="Less quantity test case" finished-at="2023-03-27T14:09:51 IST" duration-ms="6857">
+      <class name="MystoreTestCases.LessQuantity_TC">
+        <test-method signature="addQuantity()[pri:0, instance:MystoreTestCases.LessQuantity_TC@6f96c77]" started-at="2023-03-27T14:09:44 IST" name="addQuantity" finished-at="2023-03-27T14:09:51 IST" duration-ms="6857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addQuantity -->
+      </class> <!-- MystoreTestCases.LessQuantity_TC -->
+    </test> <!-- Less quantity test case -->
+    <test started-at="2023-03-27T14:09:51 IST" name="Delete add cart test case" finished-at="2023-03-27T14:10:05 IST" duration-ms="13395">
+      <class name="MystoreTestCases.DeleteCart_TC">
+        <test-method signature="deleteCart()[pri:0, instance:MystoreTestCases.DeleteCart_TC@3c419631]" started-at="2023-03-27T14:09:51 IST" name="deleteCart" finished-at="2023-03-27T14:10:05 IST" duration-ms="13394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCart -->
+      </class> <!-- MystoreTestCases.DeleteCart_TC -->
+    </test> <!-- Delete add cart test case -->
+    <test started-at="2023-03-27T14:10:05 IST" name="Valid search test case" finished-at="2023-03-27T14:10:19 IST" duration-ms="14640">
+      <class name="MystoreTestCases.ValidSearch_TC">
+        <test-method signature="validSearch()[pri:0, instance:MystoreTestCases.ValidSearch_TC@703580bf]" started-at="2023-03-27T14:10:05 IST" name="validSearch" finished-at="2023-03-27T14:10:19 IST" duration-ms="14640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validSearch -->
+      </class> <!-- MystoreTestCases.ValidSearch_TC -->
+    </test> <!-- Valid search test case -->
+    <test started-at="2023-03-27T14:10:19 IST" name="Invalid search test case" finished-at="2023-03-27T14:10:33 IST" duration-ms="13528">
+      <class name="MystoreTestCases.InvalidSearch_TC">
+        <test-method signature="validSearch()[pri:0, instance:MystoreTestCases.InvalidSearch_TC@70e8f8e]" started-at="2023-03-27T14:10:19 IST" name="validSearch" finished-at="2023-03-27T14:10:33 IST" duration-ms="13528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validSearch -->
+      </class> <!-- MystoreTestCases.InvalidSearch_TC -->
+    </test> <!-- Invalid search test case -->
+    <test started-at="2023-03-27T14:10:33 IST" name="Price low to high test case" finished-at="2023-03-27T14:10:52 IST" duration-ms="19417">
+      <class name="MystoreTestCases.LowToHighSorting_TC">
+        <test-method signature="priceLowToHigh()[pri:0, instance:MystoreTestCases.LowToHighSorting_TC@e056f20]" started-at="2023-03-27T14:10:33 IST" name="priceLowToHigh" finished-at="2023-03-27T14:10:52 IST" duration-ms="19416" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- priceLowToHigh -->
+      </class> <!-- MystoreTestCases.LowToHighSorting_TC -->
+    </test> <!-- Price low to high test case -->
+    <test started-at="2023-03-27T14:10:52 IST" name="Price high to low test case" finished-at="2023-03-27T14:11:09 IST" duration-ms="16216">
+      <class name="MystoreTestCases.HighToLowSorting_TC">
+        <test-method signature="priceLowToHigh()[pri:0, instance:MystoreTestCases.HighToLowSorting_TC@2667f029]" started-at="2023-03-27T14:10:52 IST" name="priceLowToHigh" finished-at="2023-03-27T14:11:09 IST" duration-ms="16206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- priceLowToHigh -->
+      </class> <!-- MystoreTestCases.HighToLowSorting_TC -->
+    </test> <!-- Price high to low test case -->
+    <test started-at="2023-03-27T14:11:09 IST" name="Sign out test case" finished-at="2023-03-27T14:11:21 IST" duration-ms="12852">
+      <class name="MystoreTestCases.SignOut_TC">
+        <test-method is-config="true" signature="setup()[pri:0, instance:MystoreTestCases.SignOut_TC@6a400542]" started-at="2023-03-27T14:06:32 IST" name="setup" finished-at="2023-03-27T14:06:45 IST" duration-ms="12475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="signOut()[pri:0, instance:MystoreTestCases.SignOut_TC@6a400542]" started-at="2023-03-27T14:11:09 IST" name="signOut" finished-at="2023-03-27T14:11:21 IST" duration-ms="12852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signOut -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MystoreTestCases.SignOut_TC@6a400542]" started-at="2023-03-27T14:11:21 IST" name="tearDown" finished-at="2023-03-27T14:11:23 IST" duration-ms="1636" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- MystoreTestCases.SignOut_TC -->
+    </test> <!-- Sign out test case -->
+  </suite> <!-- Mystore Regression Test Suite -->
+</testng-results>

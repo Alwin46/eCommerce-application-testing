@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mystore Regression Test Suite" verbose="2">
+
+    <test name="Login test">
+        <classes>
+            <class name="MystoreTestCases.Login_TC"> </class>
+        </classes>
+    </test>
+
+   <test name="Categorize the books and videos test">
+        <classes>
+            <class name="MystoreTestCases.BooksAndVideosCategory_TC"> </class>
+        </classes>
+    </test>
+
+      <test name="Categorize the beauty products test">
+         <classes>
+             <class name="MystoreTestCases.BeautyProductsCategory_TC"> </class>
+         </classes>
+     </test>
+
+     <test name="Categorize the Mystore all products test">
+         <classes>
+             <class name="MystoreTestCases.MystoreAllProductsCategory_TC"> </class>
+         </classes>
+     </test>
+
+     <test name="Size filter test">
+         <classes>
+             <class name="MystoreTestCases.FilterSize_TC"> </class>
+         </classes>
+     </test>
+
+    <test name="Gender filter test">
+        <classes>
+            <class name="MystoreTestCases.FilterGender_TC"> </class>
+        </classes>
+    </test>
+
+     <test name="Price filter test">
+        <classes>
+            <class name="MystoreTestCases.FilterPrice_TC"> </class>
+        </classes>
+    </test>
+
+     <test name="Product details test">
+        <classes>
+            <class name="MystoreTestCases.ProductDescription_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Product price test">
+        <classes>
+            <class name="MystoreTestCases.ProductPrice_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Product name test">
+        <classes>
+            <class name="MystoreTestCases.ProductName_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Add to cart test case">
+        <classes>
+            <class name="MystoreTestCases.AddCart_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Add quantity test case">
+        <classes>
+            <class name="MystoreTestCases.AddQuantity_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Less quantity test case">
+        <classes>
+            <class name="MystoreTestCases.LessQuantity_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Delete add cart test case">
+        <classes>
+            <class name="MystoreTestCases.DeleteCart_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Valid search test case">
+        <classes>
+            <class name="MystoreTestCases.ValidSearch_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Invalid search test case">
+        <classes>
+            <class name="MystoreTestCases.InvalidSearch_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Price low to high test case">
+        <classes>
+            <class name="MystoreTestCases.LowToHighSorting_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Price high to low test case">
+        <classes>
+            <class name="MystoreTestCases.HighToLowSorting_TC"> </class>
+        </classes>
+    </test>
+
+    <test name="Sign out test case">
+        <classes>
+            <class name="MystoreTestCases.SignOut_TC"> </class>
+        </classes>
+    </test>
+
+</suite>
