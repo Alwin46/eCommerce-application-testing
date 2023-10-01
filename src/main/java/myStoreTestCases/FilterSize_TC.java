@@ -52,11 +52,7 @@ public class FilterSize_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("sizeFilter.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("sizeFilter.png");
 
         }
         Assert.assertEquals(filtered,"Small");

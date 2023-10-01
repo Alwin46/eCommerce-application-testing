@@ -52,11 +52,7 @@ public class ProductName_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("ProductName.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("ProductName.png");
         }
         Assert.assertEquals(name,"Blackstock Altitude Jacket - Hunting Jacket");
     }

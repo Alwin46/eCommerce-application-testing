@@ -64,11 +64,7 @@ public class DeleteCart_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("deleteAddToCart.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("deleteAddToCart.png");
         }
         catch (NoSuchElementException e)
         {

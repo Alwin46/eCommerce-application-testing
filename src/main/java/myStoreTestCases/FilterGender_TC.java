@@ -57,11 +57,7 @@ public class FilterGender_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("genderFilter.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("genderFilter.png");
         }
         Assert.assertEquals(filtered,"Women");
     }

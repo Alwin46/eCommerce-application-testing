@@ -54,11 +54,7 @@ public class LowToHighSorting_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("lowToHigh.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("lowToHigh.png");
         }
     }
 

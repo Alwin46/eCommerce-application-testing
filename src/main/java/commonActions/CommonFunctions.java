@@ -2,7 +2,7 @@ package commonActions;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -40,7 +40,7 @@ public class CommonFunctions {
     public void setupExtentReport()
     {
         reports=new ExtentReports();
-        ExtentHtmlReporter reporter=new ExtentHtmlReporter("TestReport.html");
+        ExtentSparkReporter reporter=new ExtentSparkReporter("TestReport.html");
         reports.attachReporter(reporter);
     }
 

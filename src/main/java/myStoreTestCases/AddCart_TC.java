@@ -65,11 +65,7 @@ public class AddCart_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("addToCart.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("addToCart.png");
         }
         Assert.assertEquals(product,"EyeProtect19");
     }

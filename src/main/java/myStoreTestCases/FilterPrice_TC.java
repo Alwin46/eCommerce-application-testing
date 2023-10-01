@@ -56,11 +56,7 @@ public class FilterPrice_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("priceFilter.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("priceFilter.png");
         }
 
         Assert.assertEquals(filtered,"$100.00 - $350.00");

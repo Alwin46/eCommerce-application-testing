@@ -48,11 +48,7 @@ public class BeautyProductsCategory_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("beauty.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("beauty.png");
         }
         Assert.assertEquals(categorized,"Beauty");
     }

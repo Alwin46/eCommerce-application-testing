@@ -52,11 +52,7 @@ public class ValidSearch_TC extends CommonFunctions {
                System.out.println(e.getMessage());
            }
 
-           try {
-               test.addScreenCaptureFromPath("validData.png");
-           } catch (IOException e) {
-               System.out.println(e.getMessage());
-           }
+           test.addScreenCaptureFromPath("validData.png");
        }
 
        Assert.assertEquals(result,"Plant Knight Protectors - 3 PACK");

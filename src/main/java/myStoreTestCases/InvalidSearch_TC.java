@@ -49,11 +49,7 @@ public class InvalidSearch_TC extends CommonFunctions {
                System.out.println(e.getMessage());
            }
 
-           try {
-               test.addScreenCaptureFromPath("inValidData.png");
-           } catch (IOException e) {
-               System.out.println(e.getMessage());
-           }
+           test.addScreenCaptureFromPath("inValidData.png");
 
        }
        catch (NoSuchElementException e){

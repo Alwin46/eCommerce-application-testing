@@ -37,10 +37,10 @@ public class Login_TC extends CommonFunctions {
         test.info("Getting the title of the application");
         String title=driver.getTitle();
 
-        test.info("Expected result is : MyStore, My Store");
+        test.info("Expected result is : MyStore");
         test.info("Actual result is : "+title);
 
-        if (title.equals("MyStore, My Store"))
+        if (title.equals("MyStore"))
         {
             test.pass("The Mystore application is logged in successfully");
         }
@@ -58,14 +58,10 @@ public class Login_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("login.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("login.png");
 
         }
-        Assert.assertEquals(title,"MyStore, My Store");
+        Assert.assertEquals(title,"MyStore");
     }
 
     @Test

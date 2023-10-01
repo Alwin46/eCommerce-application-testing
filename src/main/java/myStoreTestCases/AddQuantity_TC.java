@@ -63,11 +63,7 @@ public class AddQuantity_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("increaseQuantity.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("increaseQuantity.png");
         }
         Assert.assertEquals(quantity,"2");
     }

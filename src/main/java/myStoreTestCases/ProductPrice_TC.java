@@ -52,11 +52,7 @@ public class ProductPrice_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("productPrice.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("productPrice.png");
         }
         Assert.assertEquals(price,"$349.99");
     }

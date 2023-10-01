@@ -48,11 +48,7 @@ public class MystoreAllProductsCategory_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("MyStore.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("MyStore.png");
         }
 
         Assert.assertEquals(categorized,"MyStore");

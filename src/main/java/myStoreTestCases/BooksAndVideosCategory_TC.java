@@ -48,11 +48,7 @@ public class BooksAndVideosCategory_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("books&Videos.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("books&Videos.png");
 
         }
         Assert.assertEquals(categorized,"Books and Videos");

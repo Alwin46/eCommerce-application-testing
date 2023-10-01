@@ -54,11 +54,7 @@ public class SignOut_TC extends CommonFunctions {
               System.out.println(e.getMessage());
           }
 
-          try {
-              test.addScreenCaptureFromPath("signOut.png");
-          } catch (IOException e) {
-              System.out.println(e.getMessage());
-          }
+          test.addScreenCaptureFromPath("signOut.png");
       }
 
         Assert.assertEquals(status,"Sign in or Join");

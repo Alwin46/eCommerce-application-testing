@@ -63,11 +63,7 @@ public class LessQuantity_TC extends CommonFunctions {
                 System.out.println(e.getMessage());
             }
 
-            try {
-                test.addScreenCaptureFromPath("decreaseQuantity.png");
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            test.addScreenCaptureFromPath("decreaseQuantity.png");
         }
 
         Assert.assertEquals(quantity,"1");
